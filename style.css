@@ -1,77 +1,158 @@
-*{    
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Kanit:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color:#20222c;
+body {
+  background: linear-gradient(160deg, #0d000a, #1c0b17);
+  font-family: 'Kanit', sans-serif;
+  color: #fce4ec;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-header{
-    background: white;
-    padding: 16px;
+/* Header */
+header {
+  background: #1a000e;
+  padding: 40px 0;
+  width: 100%;
+  box-shadow: 0 0 30px #ff005c88;
 }
 
-header > h1{
-    color: #24272E;
-    text-align: center;
-    font-family: sans-serif;
+header h1 {
+  font-family: 'Playfair Display', serif;
+  color: #ff005c;
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #ff338888;
 }
 
-.score-board{
-    margin: 20px auto;
-    border: 3px solid white;
-    border-radius: 8px;
-    text-align: center;
-    width: 200px;
-    color: white;
-    font-size: 46px;
-    padding: 15px 20px;
-    font-family: sans-serif;
-    position: relative;
+/* Scoreboard */
+.score-board {
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #ff3380;
+  border-radius: 20px;
+  width: 300px;
+  padding: 30px;
+  text-align: center;
+  font-size: 3rem;
+  color: #ff99c8;
+  position: relative;
+  box-shadow: 0 0 20px #ff006680;
+  backdrop-filter: blur(4px);
 }
 
-.badge{
-    background: #E2584D;
-    color: white;
-    font-size: 14px;
-    padding: 2px 10px;
-    font-family: sans-serif;
+.badge {
+  position: absolute;
+  background: #ff3380;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #ff66a1;
 }
 
-#user-label{
-    position: absolute;
-    top: 30px;
-    left: -25px;
-
+#user-label {
+  top: 50px;
+  left: -30px;
 }
 
-#computer-label{
-    position: absolute;
-    top: 30px;
-    right: -30px;
-
+#computer-label {
+  top: 50px;
+  right: -32px;
 }
 
-.result{
-    font-size: 40px;
-    color: white;
+/* Result Display */
+.result {
+  margin-top: 40px;
+  text-align: center;
 }
 
-.result > p{
-    text-align: center;
-    font-weight: bold;
-    font-family: sans-serif;
+.result p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffc1e3;
+  background: rgba(255, 0, 90, 0.1);
+  padding: 20px 30px;
+  border-left: 5px solid #ff005c;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #ff3a9e60;
+  font-style: italic;
 }
 
-.choices{
-    margin:50px 0 ;
-    text-align: center;
+/* Choices */
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 60px;
 }
 
-.choice{
-    border: 4px solid white;
-    display: inline-block;
+.choice {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  background: #2a0017;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #ff3380;
+  box-shadow: 0 0 25px #ff005c55;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+.choice::after {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.choice img {
+  width: 75px;
+  height: 75px;
+  filter: drop-shadow(0 0 5px #ff66a1);
+  transition: transform 0.2s ease;
+}
+
+.choice:hover {
+  cursor: pointer;
+  transform: scale(1.1) rotate(2deg);
+  background: #3a001f;
+  box-shadow: 0 0 40px #ff338099;
+}
+
+.choice:hover img {
+  transform: scale(1.2);
+}
+
+/* Action Message */
+#action-message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ff66a1;
+  text-shadow: 0 0 10px #ff008088;
+  animation: whisper 3s ease-in-out infinite;
+}
+
+@keyframes whisper {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
