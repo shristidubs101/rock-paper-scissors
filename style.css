@@ -36,7 +36,7 @@ header h1 {
 
 /* Scoreboard */
 .score-board {
-  margin: 50px auto;
+  margin: 40px auto;
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid #ff3380;
   border-radius: 20px;
@@ -75,11 +75,8 @@ header h1 {
 
 /* Result Display */
 .result {
-  margin-top: 40px;
+  margin-top: 30px;
   text-align: center;
-}
-
-.result p {
   font-size: 2rem;
   font-weight: 600;
   color: #ffc1e3;
